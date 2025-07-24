@@ -1,3 +1,4 @@
+import controller.Controller;
 import gestionClinique.Medecin;
 import gestionClinique.Medicament;
 import gestionClinique.Patient;
@@ -8,6 +9,8 @@ import java.util.ArrayList;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+
+        Controller controller = new Controller();
         Medicament medicament = new Medicament("Paracetamol","500mg");
         Medicament medicament1 = new Medicament("Amoxiciline","400mg");
 
@@ -20,8 +23,6 @@ public class Main {
 
         Medecin medecin = new Medecin("NDikmo","Cardiologue");
 
-        patient.initListMedicament();
-        medecin.initListPatient();
 
         patient.ajouterMedicament(medicament);
         patient.ajouterMedicament(medicament1);
@@ -32,6 +33,7 @@ public class Main {
         System.out.println("Ses médicaments : ");
         System.out.println("-------------------------------------------------");
         patient.afficheMedicament();
+        controller.savePatient(patient);
         System.out.println();
 
 
@@ -42,6 +44,7 @@ public class Main {
         medecin.ajouterPatient(patient);
         medecin.ajouterPatient(patient1);
         medecin.afficherPatient();
+        controller.saveMedecin(medecin);
 
 
         System.out.println();
@@ -50,6 +53,7 @@ public class Main {
         System.out.println("-------------------------------------------------");
         for (Medicament m : medicaments){
             m.afficheMedicament();
+            controller.saveMedicament(m);
         }
 
     }
