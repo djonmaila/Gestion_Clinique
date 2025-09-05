@@ -10,11 +10,10 @@ public class Patient {
     public Patient(String nom,int age){
         this.nom = nom;
         this.age = age;
-    }
-
-    public void initListMedicament(){
         medicaments = new ArrayList<Medicament>();
     }
+
+
     public  void ajouterMedicament(Medicament medicament){
         medicaments.add(medicament);
     }
@@ -28,5 +27,17 @@ public class Patient {
         for(Medicament m : medicaments){
             m.afficheMedicament();
         }
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public ArrayList<Medicament> getMedicaments() {
+        return medicaments;
     }
 }

@@ -11,10 +11,15 @@ public class Medecin {
     public Medecin(String nom,String specialite){
         this.nom = nom;
         this.specialite = specialite;
+        patients = new ArrayList<Patient>();
     }
 
-    public void initListPatient(){
-        patients = new ArrayList<Patient>();
+    public String getSpecialite() {
+        return specialite;
+    }
+
+    public ArrayList<Patient> getPatients() {
+        return patients;
     }
 
     public void afficherMedecin(){
